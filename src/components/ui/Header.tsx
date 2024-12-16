@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import MyLogo from "../../../public/images/Subject.png";
+
 import {
   HomeIcon,
   UserIcon,
@@ -10,7 +10,6 @@ import {
   GraduationCapIcon,
   PhoneIcon,
 } from "lucide-react";
-import Image from "next/image";
 
 // SEO Keywords
 const SEO_KEYWORDS = [
@@ -93,7 +92,7 @@ const Header: React.FC = () => {
         aria-label="Mobile Navigation"
       >
         <ul className="flex justify-around py-3 text-xs">
-          {NAV_ITEMS.slice(0, 4).map((item, index) => (
+          {NAV_ITEMS.slice(0, 4).map((item) => (
             <li
               key={item.href}
               className="transform transition-all duration-300 active:scale-95 hover:bg-gray-600/30 rounded-lg"
