@@ -8,6 +8,7 @@ import {
   Geist_Mono,
 } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/ui/Header";
 
 // Importing the custom fonts
 const bangers = Bangers({
@@ -81,17 +82,17 @@ export const metadata: Metadata = {
     "Kochi web innovations",
     "Ayarkkunnam software specialist",
   ],
-  authors: [{ name: "Abhiraj K", url: "https://yourwebsite.com" }],
+  authors: [{ name: "Abhiraj K", url: "https://abhiraj44.vercel.app/" }],
   creator: "Abhiraj K",
   openGraph: {
     title: "Abhiraj K - Best Software Developer in Kottayam",
     description:
       "Discover the portfolio of Abhiraj K, specializing in React, Next.js, and SEO-friendly web development.",
-    url: "https://yourwebsite.com",
+    url: "https://abhiraj44.vercel.app/",
     siteName: "Abhiraj K Portfolio",
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg",
+        url: "https://abhiraj44.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Abhiraj K - Best Software Developer",
@@ -105,7 +106,7 @@ export const metadata: Metadata = {
     title: "Abhiraj K - Best Software Developer in Kottayam",
     description:
       "Explore the expertise of Abhiraj K, a leading developer in Kerala, specializing in modern web technologies.",
-    images: ["https://yourwebsite.com/og-image.jpg"],
+    images: ["https://abhiraj44.vercel.app/og-image.jpg"],
   },
   viewport: "width=device-width, initial-scale=1.0",
 };
@@ -120,6 +121,8 @@ export default function RootLayout({
       <body
         className={`${bangers.variable} ${josefinSans.variable} ${londrinaSolid.variable} ${sacramento.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
+        <div className="mb-[110px]"></div>
         {children}
       </body>
     </html>

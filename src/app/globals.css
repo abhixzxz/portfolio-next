@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+  background-color: black;
+}
 .londrina-solid-thin {
   font-family: "Londrina Solid", sans-serif;
   font-weight: 100;

@@ -9,8 +9,14 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/photos/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "/**", // Adjust the pathname if needed
+      },
     ],
-    domains: ["images.pexels.com"],
+    domains: ["images.pexels.com", "res.cloudinary.com"],
   },
 };
 

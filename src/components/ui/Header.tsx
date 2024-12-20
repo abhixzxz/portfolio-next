@@ -64,7 +64,7 @@ const NAV_ITEMS: NavItem[] = [
 const Header: React.FC = () => {
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-2xl"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-2xl "
       role="banner"
     >
       <meta name="keywords" content={SEO_KEYWORDS.join(", ")} />
