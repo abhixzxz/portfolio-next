@@ -1,4 +1,6 @@
 "use client";
+
+import { ReactNode } from "react";
 import {
   Mail,
   Phone,
@@ -15,15 +17,15 @@ import {
   Coffee,
 } from "lucide-react";
 
-interface ContactInfo {
-  icon: JSX.Element;
+export interface ContactInfo {
+  icon: ReactNode;
   title: string;
   details: string;
   subtitle: string;
 }
 
-interface SocialLink {
-  icon: JSX.Element;
+export interface SocialLink {
+  icon: ReactNode;
   href: string;
   label: string;
   color: string;

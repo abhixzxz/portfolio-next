@@ -1,6 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { contactInfo, socialLinks } from "./links";
+import {
+  contactInfo,
+  socialLinks,
+  type ContactInfo,
+  type SocialLink,
+} from "./links";
 import { Send } from "lucide-react";
 
 const ContactClientForm = () => {
@@ -71,7 +76,7 @@ const ContactClientForm = () => {
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {contactInfo.map((info, index) => (
+            {contactInfo.map((info: ContactInfo, index: number) => (
               <div
                 key={index}
                 className="bg-zinc-900/50 backdrop-blur-sm p-6 rounded-lg border border-zinc-800 hover:border-cyan-600/50 transition-all duration-300"
@@ -114,7 +119,7 @@ const ContactClientForm = () => {
                 Connect on Social Media
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-                {socialLinks.map((social, index) => (
+                {socialLinks.map((social: SocialLink, index: number) => (
                   <a
                     key={index}
                     href={social.href}
