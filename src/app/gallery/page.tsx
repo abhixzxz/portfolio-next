@@ -1,4 +1,30 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Gallery | Abhiraj K - Visual Portfolio",
+  description:
+    "Explore my visual portfolio showcasing web development projects, UI/UX designs, and creative work.",
+  keywords: [
+    "Portfolio Gallery",
+    "Web Development Projects",
+    "UI/UX Designs",
+    "Creative Portfolio",
+    "Abhiraj K Projects",
+    "Kerala Developer Portfolio",
+  ],
+  openGraph: {
+    title: "Gallery | Abhiraj K",
+    description: "Visual showcase of web development and design projects",
+    images: [
+      {
+        url: "https://abhirajk.vercel.app/og-gallery.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 const Gallery = async () => {
   return (

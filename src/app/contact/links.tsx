@@ -55,19 +55,19 @@ export const contactInfo: ContactInfo[] = [
 export const socialLinks: SocialLink[] = [
   {
     icon: <Github className="w-5 h-5" />,
-    href: "#",
+    href: "https://github.com/abhixzxz",
     label: "Github",
     color: "hover:text-white",
   },
   {
     icon: <Linkedin className="w-5 h-5" />,
-    href: "#",
+    href: "https://www.linkedin.com/in/abhiraj-k-0661a1235",
     label: "LinkedIn",
     color: "hover:text-blue-400",
   },
   {
     icon: <Twitter className="w-5 h-5" />,
-    href: "#",
+    href: "https://x.com/bhiraj_k39869?t=vdXPv1FcU1o6UZ7dVem6CQ&s=09",
     label: "Twitter",
     color: "hover:text-sky-400",
   },
@@ -85,7 +85,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     icon: <Facebook className="w-5 h-5" />,
-    href: "#",
+    href: "https://www.facebook.com/abhi.rajk.12?mibextid=ZbWKwL",
     label: "Facebook",
     color: "hover:text-blue-500",
   },

@@ -1,5 +1,34 @@
+import { Metadata } from "next";
 import ScrollImageBox from "@/components/ui/ScrollImageBox";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Experience | Abhiraj K - Professional Journey",
+  description:
+    "Explore my professional experience in full-stack development, featuring expertise in Node.js, React, AWS, and more.",
+  keywords: [
+    "Full Stack Experience",
+    "Node.js Developer",
+    "React Developer",
+    "AWS Expert",
+    "MongoDB Developer",
+    "Angular Developer",
+    "Android Development",
+    "Kerala Tech Professional",
+  ],
+  openGraph: {
+    title: "Professional Experience | Abhiraj K",
+    description:
+      "Journey through my technical expertise and professional achievements",
+    images: [
+      {
+        url: "https://abhirajk.vercel.app/og-experience.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 const Experience = () => {
   interface Skill {
