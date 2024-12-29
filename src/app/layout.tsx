@@ -10,28 +10,27 @@ import {
 import "./globals.css";
 import Header from "@/components/ui/Header";
 
-// Importing the custom fonts
 const bangers = Bangers({
-  weight: "400", // Default weight for Bangers
+  weight: "400",
   variable: "--font-bangers",
   subsets: ["latin"],
 });
 
 const josefinSans = Josefin_Sans({
-  weight: ["100", "300", "400", "700"], // Specify the weights you want to use
-  style: ["normal", "italic"], // Add italic styles as needed
+  weight: ["100", "300", "400", "700"],
+  style: ["normal", "italic"],
   variable: "--font-josefin-sans",
   subsets: ["latin"],
 });
 
 const londrinaSolid = Londrina_Solid({
-  weight: ["100", "300", "400", "900"], // Specify weights for Londrina Solid
+  weight: ["100", "300", "400", "900"],
   variable: "--font-londrina-solid",
   subsets: ["latin"],
 });
 
 const sacramento = Sacramento({
-  weight: "400", // Sacramento supports only one weight
+  weight: "400",
   variable: "--font-sacramento",
   subsets: ["latin"],
 });
