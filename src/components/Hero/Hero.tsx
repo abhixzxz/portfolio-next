@@ -1,7 +1,7 @@
 import React from "react";
 import "./hero.css";
 import Image from "next/image";
-import ImageMain from "../../../public/images/3411109-removebg.png";
+import ImageMain from "../../../public/og-image.jpg";
 
 const HeroSection = () => {
   return (
