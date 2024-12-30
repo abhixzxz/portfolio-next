@@ -15,7 +15,7 @@ interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: "modern-react-patterns",
+    id: "modern-react-patterns-2024",
     title: "Modern React Patterns for Scalable Applications",
     excerpt:
       "Exploring advanced React patterns including compound components, render props, and custom hooks for building maintainable applications.",
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["React", "JavaScript", "Web Development"],
   },
   {
-    id: "nextjs-performance",
+    id: "nextjs-performance-optimization",
     title: "Optimizing Next.js Applications for Peak Performance",
     excerpt:
       "Deep dive into Next.js performance optimization techniques including image optimization, lazy loading, and server-side rendering strategies.",
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["Next.js", "Performance", "SEO"],
   },
   {
-    id: "ai-integration",
+    id: "ai-integration-web",
     title: "Integrating AI Solutions in Modern Web Applications",
     excerpt:
       "Practical guide to incorporating AI capabilities into web applications using TensorFlow.js and OpenAI APIs.",
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["AI", "Machine Learning", "Integration"],
   },
   {
-    id: "modern-react-patterns",
+    id: "modern-react-patterns-advanced",
     title: "Modern React Patterns for Scalable Applications",
     excerpt:
       "Exploring advanced React patterns including compound components, render props, and custom hooks for building maintainable applications.",
@@ -79,7 +79,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["React", "JavaScript", "Web Development"],
   },
   {
-    id: "nextjs-performance",
+    id: "nextjs-performance-deep-dive",
     title: "Optimizing Next.js Applications for Peak Performance",
     excerpt:
       "Deep dive into Next.js performance optimization techniques including image optimization, lazy loading, and server-side rendering strategies.",
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["Next.js", "Performance", "SEO"],
   },
   {
-    id: "ai-integration",
+    id: "ai-integration-practical",
     title: "Integrating AI Solutions in Modern Web Applications",
     excerpt:
       "Practical guide to incorporating AI capabilities into web applications using TensorFlow.js and OpenAI APIs.",

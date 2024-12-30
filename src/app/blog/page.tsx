@@ -28,7 +28,25 @@ export const metadata: Metadata = {
   ],
 };
 
-const BlogPage: React.FC = () => {
+const POSTS_PER_PAGE = 6;
+
+const BlogPage = async ({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
+  const currentPage =
+    typeof searchParams?.page === "string" ? Number(searchParams.page) : 1;
+
+  const totalPosts = blogPosts.length;
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+
+  const validatedPage = Math.max(1, Math.min(currentPage, totalPages));
+
+  const startIndex = (validatedPage - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const currentPosts = blogPosts.slice(startIndex, endIndex);
+
   const stats = [
     { label: "Articles", value: blogPosts.length },
     { label: "Topics", value: "25+" },
@@ -66,7 +84,6 @@ const BlogPage: React.FC = () => {
               technologies, architectural patterns, and industry best practices.
             </p>
 
-            {/* Search and Filter Bar - Stacked on mobile */}
             <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
               <div className="relative w-full sm:w-auto">
                 <input
@@ -108,7 +125,7 @@ const BlogPage: React.FC = () => {
 
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {currentPosts.map((post) => (
             <div
               key={post.id}
               className="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 hover:border-cyan-600 transition-all duration-300"
@@ -174,6 +191,45 @@ const BlogPage: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-12 flex justify-center gap-4">
+          {currentPage > 1 && (
+            <Link
+              href={`/blog?page=${currentPage - 1}`}
+              className="px-4 py-2 bg-zinc-900 text-cyan-400 rounded-lg hover:bg-zinc-800 transition-colors"
+            >
+              Previous
+            </Link>
+          )}
+
+          <div className="flex items-center gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+              (pageNum) => (
+                <Link
+                  key={pageNum}
+                  href={`/blog?page=${pageNum}`}
+                  className={`px-4 py-2 rounded-lg transition-colors ${
+                    pageNum === currentPage
+                      ? "bg-cyan-600 text-white"
+                      : "bg-zinc-900 text-cyan-400 hover:bg-zinc-800"
+                  }`}
+                >
+                  {pageNum}
+                </Link>
+              )
+            )}
+          </div>
+
+          {currentPage < totalPages && (
+            <Link
+              href={`/blog?page=${currentPage + 1}`}
+              className="px-4 py-2 bg-zinc-900 text-cyan-400 rounded-lg hover:bg-zinc-800 transition-colors"
+            >
+              Next
+            </Link>
+          )}
         </div>
       </section>
     </article>
