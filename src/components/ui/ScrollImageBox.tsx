@@ -51,7 +51,7 @@ const ScrollImageBox = ({ data }: { data: ScrollImageData[] }) => {
 
     window.addEventListener("scroll", scrollListener);
     return () => window.removeEventListener("scroll", scrollListener);
-  }, [lastScrollY, activeIndex, sectionHeight]);
+  }, [lastScrollY, activeIndex, sectionHeight, data.length]);
 
   return (
     <>

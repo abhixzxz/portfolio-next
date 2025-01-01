@@ -129,7 +129,7 @@ export default function FAQPage() {
             Still have questions?
           </h2>
           <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
-            Feel free to reach out if you couldn't find the answer you were
+            Feel free to reach out if you couldn&apos;t find the answer you were
             looking for.
           </p>
           <a
@@ -140,7 +140,7 @@ export default function FAQPage() {
               letterSpacing: "0.07em",
             }}
           >
-            Let's Talk
+            Let&apos;s Talk
           </a>
         </div>
       </section>

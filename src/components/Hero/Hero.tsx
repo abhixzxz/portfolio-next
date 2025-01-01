@@ -47,7 +47,7 @@ const HeroSection = () => {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [sliderImages.length]);
 
   return (
     <div className="w-full  flex flex-col md:flex-row items-center p-9">
