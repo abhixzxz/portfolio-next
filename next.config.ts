@@ -25,12 +25,11 @@ const nextConfig: NextConfig = {
     ],
     domains: ["images.pexels.com", "res.cloudinary.com", "abhirajk.vercel.app"],
   },
-  // SEO and Performance Optimizations
-  poweredByHeader: false, // Remove X-Powered-By header
-  compress: true, // Enable gzip compression
-  reactStrictMode: true,
 
-  // Headers for security and caching
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: true,
+  output: "standalone",
   async headers() {
     return [
       {
@@ -63,8 +62,17 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Cache static assets
         source: "/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source:
+          "/:path*.(jpg|jpeg|gif|png|svg|ico|webp|js|css|eot|ttf|woff|woff2)",
         headers: [
           {
             key: "Cache-Control",
@@ -75,7 +83,6 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Redirects for SEO
   async redirects() {
     return [
       {
@@ -98,12 +105,9 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Rewrites for clean URLs
   async rewrites() {
     return {
-      beforeFiles: [
-        // Add any rewrites here
-      ],
+      beforeFiles: [],
       afterFiles: [
         {
           source: "/feed.xml",

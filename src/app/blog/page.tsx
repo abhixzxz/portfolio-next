@@ -54,7 +54,7 @@ const BlogPage = async ({
   ];
 
   return (
-    <article className="bg-black text-white min-h-screen">
+    <article className="bg-black text-white min-h-screen pb-5 lg:pb-0">
       <header className="relative overflow-hidden py-12 md:py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-zinc-800 opacity-90" />
 

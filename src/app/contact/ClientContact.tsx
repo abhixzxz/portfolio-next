@@ -52,7 +52,7 @@ const ContactClientForm = () => {
   };
 
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="bg-black text-white min-h-screen pb-5 lg:pb-0">
       <div className="relative overflow-hidden py-12 md:py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-zinc-800 opacity-90" />
         <div className="absolute inset-0 overflow-hidden">

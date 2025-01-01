@@ -49,6 +49,24 @@ export const metadata: Metadata = {
   title: "Abhiraj K - Best Software Developer in Kottayam",
   description:
     "Welcome to the portfolio of Abhiraj K, the best software developer in Kottayam, Kerala. Proficient in Next.js, React, Node.js, and SEO-friendly web development.",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: {
+      url: "/apple-icon.png",
+      sizes: "180x180",
+    },
+  },
+  manifest: "/manifest.json",
   keywords: [
     "Abhiraj K",
     "Best software developer in Kottayam",
@@ -318,6 +336,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

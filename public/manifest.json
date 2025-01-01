@@ -1,21 +1,24 @@
 {
-  "name": "Abhiraj K - Full Stack Developer",
+  "name": "Abhiraj K - Best Software Developer in Kottayam",
   "short_name": "Abhiraj K",
   "description": "Portfolio of Abhiraj K, Full Stack Developer specializing in React and Next.js",
   "start_url": "https://abhirajk.vercel.app",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#22d3ee",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "theme_color": "#22d3ee",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait"
 }
