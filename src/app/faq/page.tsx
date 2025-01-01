@@ -1,5 +1,10 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import FAQItem from "./components/FAQItem";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+};
 
 export const metadata: Metadata = {
   title: "FAQ | Abhiraj K - Frequently Asked Questions",
