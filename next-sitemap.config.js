@@ -1,16 +1,25 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: "https://abhirajk.vercel.app",
-  generateRobotsTxt: false,
-  changefreq: "weekly",
-  priority: 0.7,
+  generateRobotsTxt: true,
+  changefreq: "daily", // Increased frequency for better indexing
+  priority: 0.8, // Increased default priority
   sitemapSize: 5000,
   exclude: ["/api/*", "/_next/*", "/static/*"],
-  generateIndexSitemap: false,
+  robotsTxtOptions: {
+    additionalSitemaps: ["https://abhirajk.vercel.app/sitemap.xml"],
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+  },
+  generateIndexSitemap: true,
   additionalPaths: async () => [
     {
       loc: "/",
-      changefreq: "weekly",
+      changefreq: "daily",
       priority: 1.0,
       lastmod: new Date().toISOString(),
     },
@@ -22,38 +31,38 @@ module.exports = {
     },
     {
       loc: "/about",
-      changefreq: "monthly",
+      changefreq: "weekly", // Increased frequency
       priority: 0.8,
       lastmod: new Date().toISOString(),
     },
     {
       loc: "/experience",
-      changefreq: "monthly",
+      changefreq: "weekly",
       priority: 0.8,
       lastmod: new Date().toISOString(),
     },
     {
       loc: "/contact",
-      changefreq: "monthly",
-      priority: 0.7,
+      changefreq: "weekly",
+      priority: 0.8,
       lastmod: new Date().toISOString(),
     },
     {
       loc: "/faq",
-      changefreq: "monthly",
-      priority: 0.7,
+      changefreq: "weekly",
+      priority: 0.8,
       lastmod: new Date().toISOString(),
     },
     {
       loc: "/certificates",
-      changefreq: "monthly",
-      priority: 0.6,
+      changefreq: "weekly",
+      priority: 0.7,
       lastmod: new Date().toISOString(),
     },
     {
       loc: "/gallery",
-      changefreq: "monthly",
-      priority: 0.6,
+      changefreq: "weekly",
+      priority: 0.7,
       lastmod: new Date().toISOString(),
     },
   ],

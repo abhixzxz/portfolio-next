@@ -1,18 +1,19 @@
 # https://abhirajk.vercel.app/robots.txt
 
-# Allow all crawlers
+# Allow all crawlers including AI
 User-agent: *
 Allow: /
 
-# Specific page rules
+# Specific page rules for clarity
 Allow: /about
 Allow: /blog
 Allow: /gallery
 Allow: /experience
 Allow: /certificates
 Allow: /contact
+Allow: /faq
 
-# Prevent crawling of potential sensitive areas
+# Basic protection for system directories
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
@@ -20,10 +21,7 @@ Disallow: /static/
 # Sitemap location
 Sitemap: https://abhirajk.vercel.app/sitemap.xml
 
-# Crawl-delay for all bots
-Crawl-delay: 1
-
-# Additional rules for specific bots
+# Optimized crawl settings
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -36,9 +34,15 @@ User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
 
-# Block specific bots that might cause issues
+# Allow AI bots with reasonable rate limits
 User-agent: GPTBot
-Disallow: /
+Allow: /
+Crawl-delay: 2
 
 User-agent: ChatGPT-User
-Disallow: / 
+Allow: /
+Crawl-delay: 2
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 2
