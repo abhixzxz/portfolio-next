@@ -30,7 +30,9 @@ const Certificates = () => {
   return (
     <div className="min-h-screen pb-5 lg:pb-0 bg-black text-white p-8">
       <h1 className="text-4xl font-bold text-center mb-8">Certificates</h1>
-      <h2 className="text-2xl text-center text-gray-400">Coming Soon ...</h2>
+      <h2 className="text-2xl text-center text-gray-400">
+        Coming Soon.........
+      </h2>
     </div>
   );
 };
