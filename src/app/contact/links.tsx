@@ -3,7 +3,6 @@
 import { ReactNode } from "react";
 import {
   Mail,
-  Phone,
   MapPin,
   Linkedin,
   Github,
@@ -33,10 +32,10 @@ export interface SocialLink {
 
 export const contactInfo: ContactInfo[] = [
   {
-    icon: <Phone className="w-6 h-6 text-cyan-400" />,
-    title: "Phone",
-    details: "+91 123-456-7890",
-    subtitle: "Available Mon-Fri, 9am-6pm IST",
+    icon: <Instagram className="w-6 h-6 text-cyan-400" />,
+    title: "Instagram",
+    details: "https://www.instagram.com/abhirajk84/",
+    subtitle: "Available ",
   },
   {
     icon: <Mail className="w-6 h-6 text-cyan-400" />,
@@ -73,15 +72,9 @@ export const socialLinks: SocialLink[] = [
   },
   {
     icon: <Instagram className="w-5 h-5" />,
-    href: "#",
+    href: "https://www.instagram.com/abhirajk84/",
     label: "Instagram",
     color: "hover:text-pink-500",
-  },
-  {
-    icon: <Youtube className="w-5 h-5" />,
-    href: "#",
-    label: "YouTube",
-    color: "hover:text-red-500",
   },
   {
     icon: <Facebook className="w-5 h-5" />,
@@ -91,26 +84,14 @@ export const socialLinks: SocialLink[] = [
   },
   {
     icon: <Globe className="w-5 h-5" />,
-    href: "#",
+    href: "https://abhirajk.vercel.app/",
     label: "Website",
     color: "hover:text-green-400",
   },
   {
-    icon: <MessageCircle className="w-5 h-5" />,
-    href: "#",
-    label: "Blog",
-    color: "hover:text-purple-400",
-  },
-  {
     icon: <Codepen className="w-5 h-5" />,
-    href: "#",
-    label: "CodePen",
+    href: "https://tailwindflex.com/@abhirajk",
+    label: "Tailwind Flex",
     color: "hover:text-gray-100",
-  },
-  {
-    icon: <Coffee className="w-5 h-5" />,
-    href: "#",
-    label: "Buy Me a Coffee",
-    color: "hover:text-yellow-400",
   },
 ];

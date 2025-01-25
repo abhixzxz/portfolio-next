@@ -53,7 +53,7 @@ const ContactClientForm = () => {
 
   return (
     <main className="bg-black text-white min-h-screen pb-5 lg:pb-0">
-      <div className="relative overflow-hidden py-12 md:py-20">
+      <div className="relative overflow-hidden py-12 md:py-[200px]">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-zinc-800 opacity-90" />
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-24 -right-24 w-72 md:w-96 h-72 md:h-96 bg-cyan-500/10 rounded-full blur-3xl" />
@@ -124,26 +124,32 @@ const ContactClientForm = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className={`flex items-center gap-3 p-3 bg-zinc-800/50 rounded-lg hover:bg-cyan-600/20 hover:border-cyan-600/50 border border-zinc-700 transition-all duration-300 group ${social.color}`}
+                    className="flex items-center justify-center p-3 bg-zinc-800/50 rounded-lg hover:bg-cyan-600/20 hover:border-cyan-600/50 border border-zinc-700 transition-all duration-300 group"
                     aria-label={social.label}
                   >
-                    {social.icon}
-                    <span className="text-sm text-gray-400 group-hover:text-gray-200">
-                      {social.label}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 flex items-center justify-center text-gray-400 group-hover:text-gray-200">
+                        {social.icon}
+                      </div>
+                      <span className="text-sm text-gray-400 group-hover:text-gray-200">
+                        {social.label}
+                      </span>
+                    </div>
                   </a>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 bg-zinc-900/50 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-zinc-800">
-            <h2 className="text-2xl font-semibold mb-6">Send a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+          <div className="w-full md:w-1/2 bg-zinc-900/50 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-lg shadow-lg border border-zinc-800">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center sm:text-left bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+              Send a Message
+            </h2>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+              <div className="form-group">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 mb-2"
                 >
                   Name
                 </label>
@@ -154,15 +160,15 @@ const ContactClientForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className="mt-1 block w-full rounded-lg bg-zinc-800 border border-zinc-700 px-3 py-2 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                  className="w-full rounded-lg bg-zinc-800/80 border border-zinc-700 px-4 py-3 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all duration-300"
                   required
                 />
               </div>
 
-              <div>
+              <div className="form-group">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 mb-2"
                 >
                   Email
                 </label>
@@ -173,15 +179,15 @@ const ContactClientForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="mt-1 block w-full rounded-lg bg-zinc-800 border border-zinc-700 px-3 py-2 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                  className="w-full rounded-lg bg-zinc-800/80 border border-zinc-700 px-4 py-3 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all duration-300"
                   required
                 />
               </div>
 
-              <div>
+              <div className="form-group">
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 mb-2"
                 >
                   Subject
                 </label>
@@ -192,15 +198,15 @@ const ContactClientForm = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="What's this about?"
-                  className="mt-1 block w-full rounded-lg bg-zinc-800 border border-zinc-700 px-3 py-2 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                  className="w-full rounded-lg bg-zinc-800/80 border border-zinc-700 px-4 py-3 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all duration-300"
                   required
                 />
               </div>
 
-              <div>
+              <div className="form-group">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 mb-2"
                 >
                   Message
                 </label>
@@ -211,17 +217,17 @@ const ContactClientForm = () => {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Your message here..."
-                  className="mt-1 block w-full rounded-lg bg-zinc-800 border border-zinc-700 px-3 py-2 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+                  className="w-full rounded-lg bg-zinc-800/80 border border-zinc-700 px-4 py-3 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all duration-300 resize-none"
                   required
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-cyan-600/20 border border-cyan-600/50 py-3 px-4 rounded-lg text-cyan-400 hover:bg-cyan-600/30 transition-colors duration-300 font-medium flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-500 hover:to-cyan-600 py-3 px-4 rounded-lg text-white transition-all duration-300 font-medium flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/25"
               >
-                <Send className="w-5 h-5" />
-                Send Message
+                <Send className="w-5 h-5 stroke-2" />
+                <span>Send Message</span>
               </button>
             </form>
           </div>

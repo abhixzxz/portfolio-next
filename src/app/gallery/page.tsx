@@ -14,15 +14,33 @@ export const metadata: Metadata = {
     "Kerala Developer Portfolio",
   ],
   openGraph: {
+    type: "website",
+    url: "https://abhirajk.vercel.app/gallery",
     title: "Gallery | Abhiraj K",
     description: "Visual showcase of web development and design projects",
+    siteName: "Abhiraj K Portfolio",
     images: [
       {
         url: "https://abhirajk.vercel.app/og-gallery.jpg",
         width: 1200,
         height: 630,
+        alt: "Abhiraj K Portfolio Gallery",
       },
     ],
+  },
+  alternates: {
+    canonical: "https://abhirajk.vercel.app/gallery",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

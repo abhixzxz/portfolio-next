@@ -26,6 +26,35 @@ export const metadata: Metadata = {
     "Tech Industry Perspectives",
     "Development Best Practices",
   ],
+  openGraph: {
+    type: "website",
+    url: "https://abhirajk.vercel.app/blog",
+    title: "Tech Blog | Abhiraj K - Full Stack Developer",
+    description: "Explore technical insights and development tips from Abhiraj K",
+    siteName: "Abhiraj K Blog",
+    images: [
+      {
+        url: "https://abhirajk.vercel.app/images/blog-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Abhiraj K Tech Blog",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://abhirajk.vercel.app/blog",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const POSTS_PER_PAGE = 6;
@@ -37,15 +66,25 @@ const BlogPage = async ({
 }) => {
   const currentPage =
     typeof searchParams?.page === "string" ? Number(searchParams.page) : 1;
+  const searchQuery = typeof searchParams?.search === "string" ? searchParams.search : "";
 
-  const totalPosts = blogPosts.length;
+  const filteredPosts = searchQuery
+    ? blogPosts.filter((post) =>
+        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      )
+    : blogPosts;
+
+  const totalPosts = filteredPosts.length;
   const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
 
   const validatedPage = Math.max(1, Math.min(currentPage, totalPages));
 
   const startIndex = (validatedPage - 1) * POSTS_PER_PAGE;
   const endIndex = startIndex + POSTS_PER_PAGE;
-  const currentPosts = blogPosts.slice(startIndex, endIndex);
+  const currentPosts = filteredPosts.slice(startIndex, endIndex);
 
   const stats = [
     { label: "Articles", value: blogPosts.length },
@@ -57,8 +96,6 @@ const BlogPage = async ({
     <article className="bg-black text-white min-h-screen pb-5 lg:pb-0">
       <header className="relative overflow-hidden py-12 md:py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-zinc-800 opacity-90" />
-
-        {/* Abstract geometric shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-24 -right-24 w-72 md:w-96 h-72 md:h-96 bg-cyan-500/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -left-24 w-72 md:w-96 h-72 md:h-96 bg-cyan-700/10 rounded-full blur-3xl" />
@@ -85,24 +122,28 @@ const BlogPage = async ({
             </p>
 
             <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
-              <div className="relative w-full sm:w-auto">
+              <form className="relative w-full sm:w-auto">
                 <input
                   type="text"
+                  name="search"
+                  defaultValue={searchQuery}
                   placeholder="Search articles..."
                   className="w-full sm:w-64 pl-10 pr-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded-lg text-gray-300 focus:outline-none focus:border-cyan-500"
                 />
                 <SearchIcon className="absolute left-3 top-2.5 h-5 w-5 text-gray-500" />
-              </div>
+              </form>
 
               <div className="flex gap-3 w-full sm:w-auto">
                 <button className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded-lg text-gray-300 hover:border-cyan-500 transition-colors">
                   <FilterIcon className="h-5 w-5" />
                   <span>Filter</span>
                 </button>
-                <button className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-cyan-600/20 border border-cyan-600/50 rounded-lg text-cyan-400 hover:bg-cyan-600/30 transition-colors">
-                  <RssIcon className="h-5 w-5" />
-                  <span>Subscribe</span>
-                </button>
+                <Link href="/contact">
+                  <button className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-cyan-600/20 border border-cyan-600/50 rounded-lg text-cyan-400 hover:bg-cyan-600/30 transition-colors">
+                    <RssIcon className="h-5 w-5" />
+                    <span>Connect</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

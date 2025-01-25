@@ -71,7 +71,7 @@ const Header: React.FC = () => {
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
       <nav
-        className="fixed bottom-0 left-0 right-0 bg-gradient-to-br from-black via-gray-900 to-zinc-800 lg:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
+        className="fixed bottom-0 left-0 right-0  bg-gradient-to-br from-black via-gray-900 to-zinc-800 lg:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
         aria-label="Mobile Navigation"
       >
         <div className="container mx-auto px-4 ">

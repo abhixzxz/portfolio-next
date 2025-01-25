@@ -21,6 +21,42 @@ export const metadata: Metadata = {
   description:
     "Expert Full Stack Developer specializing in modern web and mobile technologies. Transforming innovative ideas into robust digital solutions across React, Node.js, and emerging tech stacks.",
   keywords: [
+    // Name Variations
+    "Abhi",
+    "Abhiraj",
+    "AbhirajK",
+    "Abhiraj K",
+    "abhiraj.k",
+    "Developer Abhiraj",
+    "Software engineer Abhiraj K",
+    "Programmer AbhirajK",
+
+    // Company-Specific
+    "Mykare developer",
+    "Mykarehealth developer",
+    "Software developer Mykare",
+    "MyKare Health engineer",
+    "Mykare software developer",
+
+    // Technologies
+    "React developer Kerala",
+    "Next.js developer Kottayam",
+    "Node.js developer India",
+    "Full stack developer Kerala",
+    "Web developer Kottayam",
+    "JavaScript developer",
+    "TypeScript developer",
+    "MongoDB developer",
+    "API developer",
+    "Frontend developer",
+
+    "Best Mykare developer",
+    "Top developer at Mykare",
+    "Mykare lead developer",
+    "MyKare Health tech expert",
+    "Mykare software architect",
+    "Best software developer Mykare",
+
     // Technical Skills
     "Full Stack Developer",
     "Web Development",
@@ -90,23 +126,9 @@ export const metadata: Metadata = {
     languages: {
       "en-US": absoluteUrl("/about"),
       "en-GB": absoluteUrl("/about"),
+      "ml-IN": absoluteUrl("/about"),
     },
   },
-  verification: {
-    google: "your-google-site-verification-code",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  manifest: absoluteUrl("/manifest.json"),
 };
 
 const AboutPage: React.FC = () => {
