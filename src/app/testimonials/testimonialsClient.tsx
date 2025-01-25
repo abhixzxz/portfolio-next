@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { Testimonial } from "@/types/testimonials";
 
@@ -11,23 +11,23 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentIndex((prevIndex) =>
         prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
       );
     }
-  };
+  }, [isTransitioning, testimonials.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
     }
-  };
+  }, [isTransitioning, testimonials.length]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,15 +40,13 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
   useEffect(() => {
     const interval = setInterval(handleNext, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [handleNext]);
 
   const currentTestimonial = testimonials[currentIndex];
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Background gradients */}
-
         <div className="relative">
           <div className="text-center mb-16">
             <h2
@@ -56,17 +54,13 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
                 fontFamily: "var(--font-bangers)",
                 letterSpacing: "0.07em",
               }}
-              className="text-4xl md:text-5xl
-            
-            font-bold text-cyan-400 mb-4"
+              className="text-4xl md:text-5xl font-bold text-cyan-400 mb-4"
             >
               What People Say
             </h2>
           </div>
 
-          {/* Testimonial content */}
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-            {/* Image section */}
             <div className="w-full md:w-1/2 relative">
               <div className="relative aspect-square max-w-md mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500 to-purple-500 rounded-2xl transform rotate-6"></div>
@@ -90,7 +84,6 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
               </div>
             </div>
 
-            {/* Quote section */}
             <div className="w-full md:w-1/2">
               <div className="relative bg-white/5 rounded-2xl p-8 md:p-10 backdrop-blur-sm border border-white/10">
                 <div className="relative">
@@ -113,7 +106,6 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
             </div>
           </div>
 
-          {/* Navigation buttons */}
           <div className="flex justify-center items-center gap-6 mt-12">
             <button
               onClick={handlePrevious}

@@ -8,12 +8,9 @@ import {
   Github,
   Twitter,
   Instagram,
-  Youtube,
   Facebook,
   Globe,
-  MessageCircle,
   Codepen,
-  Coffee,
 } from "lucide-react";
 
 export interface ContactInfo {
