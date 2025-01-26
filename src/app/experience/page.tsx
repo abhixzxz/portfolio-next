@@ -84,10 +84,10 @@ const SAMPLE_SKILLS: Skill[] = [
 export default function Experience() {
   return (
     <main className="experience-container pt-0 lg:pt-[120px]">
-      <div className="container mx-auto">
-        <header className="experience-header">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="experience-header mb-8 sm:mb-12">
           <h1
-            className="experience-title"
+            className="experience-title text-3xl sm:text-4xl lg:text-5xl mb-4"
             style={{
               fontFamily: "var(--font-bangers)",
               letterSpacing: "0.07em",
@@ -96,7 +96,7 @@ export default function Experience() {
             Professional Experience
           </h1>
           <p
-            className="experience-subtitle"
+            className="experience-subtitle text-lg sm:text-xl lg:text-2xl"
             style={{
               fontFamily: "var(--font-bangers)",
               letterSpacing: "0.07em",
@@ -106,12 +106,12 @@ export default function Experience() {
           </p>
         </header>
 
-        <section className="skills-grid">
+        <section className="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SAMPLE_SKILLS.map((skill) => (
-            <article key={skill.title} className="skill-card">
+            <article key={skill.title} className="skill-card p-6 rounded-lg shadow-lg bg-white/5 backdrop-blur-sm">
               <div className="skill-content">
-                <div className="skill-header">
-                  <div className="relative w-16 h-16">
+                <div className="skill-header flex items-center gap-4 mb-4">
+                  <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
                     <Image
                       src={skill.imageUrl || "/placeholder.svg"}
                       alt={`${skill.title} logo`}
@@ -119,10 +119,10 @@ export default function Experience() {
                       objectFit="contain"
                     />
                   </div>
-                  <h2 className="skill-title">{skill.title}</h2>
+                  <h2 className="skill-title text-xl sm:text-2xl font-semibold">{skill.title}</h2>
                 </div>
                 <div className="skill-description">
-                  <p>{skill.description}</p>
+                  <p className="text-sm sm:text-base leading-relaxed">{skill.description}</p>
                 </div>
               </div>
             </article>

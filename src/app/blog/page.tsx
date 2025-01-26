@@ -30,7 +30,8 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://abhirajk.vercel.app/blog",
     title: "Tech Blog | Abhiraj K - Full Stack Developer",
-    description: "Explore technical insights and development tips from Abhiraj K",
+    description:
+      "Explore technical insights and development tips from Abhiraj K",
     siteName: "Abhiraj K Blog",
     images: [
       {
@@ -50,9 +51,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
@@ -66,14 +67,18 @@ const BlogPage = async ({
 }) => {
   const currentPage =
     typeof searchParams?.page === "string" ? Number(searchParams.page) : 1;
-  const searchQuery = typeof searchParams?.search === "string" ? searchParams.search : "";
+  const searchQuery =
+    typeof searchParams?.search === "string" ? searchParams.search : "";
 
   const filteredPosts = searchQuery
-    ? blogPosts.filter((post) =>
-        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+    ? blogPosts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.tags.some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase())
+          )
       )
     : blogPosts;
 
@@ -200,17 +205,15 @@ const BlogPage = async ({
                   </div>
                 </div>
 
-                <Link href={`/blog/${post.id}`}>
-                  <h2
-                    className="text-xl font-bold mb-3 text-cyan-400 hover:text-cyan-300"
-                    style={{
-                      fontFamily: "var(--font-bangers)",
-                      letterSpacing: "0.07em",
-                    }}
-                  >
-                    {post.title}
-                  </h2>
-                </Link>
+                <h2
+                  className="text-xl font-bold mb-3 text-cyan-400 hover:text-cyan-300"
+                  style={{
+                    fontFamily: "var(--font-bangers)",
+                    letterSpacing: "0.07em",
+                  }}
+                >
+                  {post.title}
+                </h2>
 
                 <p className="text-gray-400 text-sm mb-4">{post.excerpt}</p>
 
