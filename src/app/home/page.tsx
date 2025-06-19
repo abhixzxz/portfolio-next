@@ -1,13 +1,12 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createMetadata } from "@/common/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Abhiraj K - Senior Software Developer in Kottayam, Kerala",
   description:
-    "Top-rated software developer in Kottayam, Kerala. Specializing in React.js, Next.js, and full-stack development. Professional web and mobile app development services in Ayarkunnam, Central Kerala. Creating innovative digital solutions with cutting-edge technology.",
-  keywords:
-    "software developer kottayam, senior developer kerala, react js developer kottayam, next.js developer kerala, full-stack developer ayarkunnam, custom software solutions kerala, mobile app development specialist, enterprise software developer, tech solutions creator kottayam, best software developer in kottayam, top software developer in kerala, senior software developer ayarkunnam, innovative developer in ayarkunnam, software engineer in central kerala, professional developer in kerala, full-stack developer kerala, web application developer ayarkunnam, software solutions expert kerala, custom software developer kottayam, enterprise software architect, scalable web application developer, digital transformation expert, tech innovation expert kerala",
+    "Top-rated software developer in Kottayam, Kerala. Specializing in React.js, Next.js, and full-stack development. Professional web and mobile app development services in Ayarkunnam, Central Kerala.",
   alternates: {
     canonical: "https://abhirajk.vercel.app/",
     languages: {
@@ -19,10 +18,6 @@ export const metadata: Metadata = {
     title: "Abhiraj K - Senior Software Developer in Kottayam, Kerala",
     description:
       "Professional software development services in Kottayam, Kerala",
-    url: "https://abhirajk.vercel.app/",
-    siteName: "Abhiraj K - Software Developer",
-    locale: "en_US",
-    type: "website",
     images: [
       {
         url: "https://abhirajk.vercel.app/og-home.jpg",
@@ -43,7 +38,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-};
+});
 
 export default function LandingPage() {
   return (

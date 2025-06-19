@@ -1,4 +1,5 @@
-import { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
+import { createMetadata } from "@/common/metadata";
 import FAQItem from "./components/FAQItem";
 
 export const viewport: Viewport = {
@@ -6,7 +7,7 @@ export const viewport: Viewport = {
   initialScale: 1.0,
 };
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "FAQ | Abhiraj K - Frequently Asked Questions",
   description:
     "Common questions about my development services, process, and expertise.",
@@ -31,7 +32,10 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+  alternates: {
+    canonical: "https://abhirajk.vercel.app/faq",
+  },
+});
 
 const faqs = [
   {
@@ -88,67 +92,102 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <article className="min-h-screen bg-black text-white">
-      <header className="relative overflow-hidden py-8 md:py-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-zinc-800 opacity-90" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -right-24 w-72 md:w-96 h-72 md:h-96 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 w-72 md:w-96 h-72 md:h-96 bg-gradient-to-tr from-cyan-700/20 to-transparent rounded-full blur-3xl" />
-        </div>
+      <article className="relative text-white">
+        {/* Header Section */}
+        <header className="relative overflow-hidden py-16 md:py-24">
+          <div className="container mx-auto px-4 text-center max-w-4xl">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-8">
+              <span className="text-sm font-medium text-purple-300">
+                Common Questions
+              </span>
+            </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1
-            className="text-4xl md:text-7xl font-black mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-white to-cyan-400"
-            style={{
-              fontFamily: "var(--font-bangers)",
-              letterSpacing: "0.07em",
-            }}
-          >
-            FAQ
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            Find answers to common questions about my development services and
-            process
-          </p>
-        </div>
-      </header>
+            {/* Title */}
+            <h1
+              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6"
+              style={{
+                fontFamily: "var(--font-bangers)",
+                letterSpacing: "0.07em",
+              }}
+            >
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
+                FREQUENTLY ASKED
+              </span>
+            </h1>
 
-      <section className="max-w-3xl mx-auto px-3 md:px-4 py-8 md:py-16">
-        <div className="space-y-3 md:space-y-4">
-          {faqs.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} />
-          ))}
-        </div>
-      </section>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Find answers to common questions about my development services and
+              process
+            </p>
+          </div>
+        </header>
 
-      <section className="max-w-4xl mx-auto px-4 py-8 md:py-16 text-center">
-        <div className="bg-gradient-to-br from-zinc-900 to-zinc-900/50 rounded-xl md:rounded-2xl p-6 md:p-12 border border-zinc-800">
-          <h2
-            className="text-xl md:text-3xl font-bold mb-4 md:mb-6 text-cyan-400"
-            style={{
-              fontFamily: "var(--font-bangers)",
-              letterSpacing: "0.07em",
-            }}
-          >
-            Still have questions?
-          </h2>
-          <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
-            Feel free to reach out if you couldn&apos;t find the answer you were
-            looking for.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white text-sm md:text-base rounded-lg md:rounded-xl hover:from-cyan-500 hover:to-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
-            style={{
-              fontFamily: "var(--font-bangers)",
-              letterSpacing: "0.07em",
-            }}
-          >
-            Let&apos;s Talk
-          </a>
-        </div>
-      </section>
-    </article>
+        {/* FAQ Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="group relative p-8 rounded-3xl border backdrop-blur-sm bg-gradient-to-br from-slate-900/40 to-slate-800/40 border-slate-800/50 hover:border-slate-700/50 transition-all duration-500 ease-out hover:scale-[1.01] hover:-translate-y-1"
+                >
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 blur-xl -z-10 transition-opacity duration-500" />
+
+                  <FAQItem question={faq.question} answer={faq.answer} />
+
+                  {/* Bottom Accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 rounded-b-3xl bg-gradient-to-r from-cyan-500/60 to-purple-500/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-4xl text-center">
+            <div className="relative p-12 rounded-3xl border border-slate-800/50 backdrop-blur-sm bg-gradient-to-br from-slate-900/40 to-slate-800/40">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 blur-xl -z-10" />
+
+              <h2
+                className="text-3xl md:text-4xl font-black mb-6"
+                style={{
+                  fontFamily: "var(--font-bangers)",
+                  letterSpacing: "0.07em",
+                }}
+              >
+                <span className="bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
+                  STILL HAVE QUESTIONS?
+                </span>
+              </h2>
+
+              <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+                Feel free to reach out if you couldn't find the answer you were
+                looking for.
+              </p>
+
+              <a
+                href="/contact"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white font-semibold rounded-2xl hover:from-cyan-500 hover:to-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 hover:scale-105"
+                style={{
+                  fontFamily: "var(--font-bangers)",
+                  letterSpacing: "0.07em",
+                }}
+              >
+                Let's Talk
+              </a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
   );
 }
