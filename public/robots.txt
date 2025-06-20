@@ -1,48 +1,29 @@
-# https://abhirajk.vercel.app/robots.txt
-
-# Allow all crawlers including AI
+# *
 User-agent: *
 Allow: /
-
-# Specific page rules for clarity
-Allow: /about
 Allow: /blog
-Allow: /gallery
+Allow: /about
 Allow: /experience
-Allow: /certificates
 Allow: /contact
 Allow: /faq
+Allow: /certificates
+Allow: /gallery
+Allow: /testimonials
 
-# Basic protection for system directories
+# Googlebot,Googlebot-Image,Googlebot-News,Googlebot-Video,Bingbot,YandexBot,AhrefsBot,SemrushBot,DotBot,ChatGPT,PetalBot
+User-agent: Googlebot,Googlebot-Image,Googlebot-News,Googlebot-Video,Bingbot,YandexBot,AhrefsBot,SemrushBot,DotBot,ChatGPT,PetalBot
+Allow: /
+
+# *
+User-agent: *
 Disallow: /api/
 Disallow: /_next/
+Disallow: /server-sitemap.xml
 Disallow: /static/
 
-# Sitemap location
+# Host
+Host: https://abhirajk.vercel.app
+
+# Sitemaps
 Sitemap: https://abhirajk.vercel.app/sitemap.xml
-
-# Optimized crawl settings
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-# Allow AI bots with reasonable rate limits
-User-agent: GPTBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: ChatGPT-User
-Allow: /
-Crawl-delay: 2
-
-User-agent: anthropic-ai
-Allow: /
-Crawl-delay: 2
+Sitemap: https://abhirajk.vercel.app/server-sitemap.xml

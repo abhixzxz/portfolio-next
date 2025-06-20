@@ -28,8 +28,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://abhirajk.vercel.app/experience",
+  },
 };
-
 interface Skill {
   title: string;
   description: string;
@@ -108,7 +110,10 @@ export default function Experience() {
 
         <section className="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SAMPLE_SKILLS.map((skill) => (
-            <article key={skill.title} className="skill-card p-6 rounded-lg shadow-lg bg-white/5 backdrop-blur-sm">
+            <article
+              key={skill.title}
+              className="skill-card p-6 rounded-lg shadow-lg bg-white/5 backdrop-blur-sm"
+            >
               <div className="skill-content">
                 <div className="skill-header flex items-center gap-4 mb-4">
                   <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
@@ -119,10 +124,14 @@ export default function Experience() {
                       objectFit="contain"
                     />
                   </div>
-                  <h2 className="skill-title text-xl sm:text-2xl font-semibold">{skill.title}</h2>
+                  <h2 className="skill-title text-xl sm:text-2xl font-semibold">
+                    {skill.title}
+                  </h2>
                 </div>
                 <div className="skill-description">
-                  <p className="text-sm sm:text-base leading-relaxed">{skill.description}</p>
+                  <p className="text-sm sm:text-base leading-relaxed">
+                    {skill.description}
+                  </p>
                 </div>
               </div>
             </article>

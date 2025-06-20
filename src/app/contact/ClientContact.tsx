@@ -74,7 +74,7 @@ const ContactClientForm = () => {
               letterSpacing: "0.07em",
             }}
           >
-            <span className="text-white">Let's </span>
+            <span className="text-white">Let&apos;s </span>
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
               CONNECT
             </span>
@@ -82,8 +82,8 @@ const ContactClientForm = () => {
 
           <p className="text-base md:text-lg lg:text-xl text-slate-300 text-center max-w-2xl lg:max-w-3xl mx-auto mb-12 md:mb-16 leading-relaxed px-4">
             Have a project in mind or want to discuss potential opportunities?
-            I'm always excited to connect with fellow developers and clients.
-            Let's create something amazing together!
+            I&apos;m always excited to connect with fellow developers and
+            clients. Let&apos;s create something amazing together!
           </p>
 
           {/* Contact Info Cards */}

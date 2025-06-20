@@ -60,15 +60,15 @@ export const metadata: Metadata = {
 
 const POSTS_PER_PAGE = 6;
 
-const BlogPage = async ({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) => {
+interface BlogPageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+const BlogPage = async ({ searchParams }: BlogPageProps) => {
+  const params = await searchParams;
   const currentPage =
-    typeof searchParams?.page === "string" ? Number(searchParams.page) : 1;
-  const searchQuery =
-    typeof searchParams?.search === "string" ? searchParams.search : "";
+    typeof params?.page === "string" ? Number(params.page) : 1;
+  const searchQuery = typeof params?.search === "string" ? params.search : "";
 
   const filteredPosts = searchQuery
     ? blogPosts.filter(
@@ -121,7 +121,7 @@ const BlogPage = async ({
             <p className="mt-4 md:mt-6 text-base md:text-xl text-gray-300 max-w-4xl mx-auto px-4">
               Welcome to Tech Insights, your go-to destination for exploring the
               latest in web development and software engineering. Whether{" "}
-              {"you're"}a seasoned developer or just starting your coding
+              {"you're"} a seasoned developer or just starting your coding
               journey, we dive deep into modern frameworks, cutting-edge
               technologies, architectural patterns, and industry best practices.
             </p>
@@ -225,7 +225,7 @@ const BlogPage = async ({
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="bg-zinc-800 text-gray-300 px-2 py-1 rounded-full text-xs flex items-centers"
+                      className="bg-zinc-800 text-gray-300 px-2 py-1 rounded-full text-xs flex items-center"
                     >
                       <TagIcon className="w-3 h-3 mr-1" />
                       {tag}
@@ -239,9 +239,9 @@ const BlogPage = async ({
 
         {/* Pagination */}
         <div className="mt-12 flex justify-center gap-4">
-          {currentPage > 1 && (
+          {validatedPage > 1 && (
             <Link
-              href={`/blog?page=${currentPage - 1}`}
+              href={`/blog?page=${validatedPage - 1}`}
               className="px-4 py-2 bg-zinc-900 text-cyan-400 rounded-lg hover:bg-zinc-800 transition-colors"
             >
               Previous
@@ -255,7 +255,7 @@ const BlogPage = async ({
                   key={pageNum}
                   href={`/blog?page=${pageNum}`}
                   className={`px-4 py-2 rounded-lg transition-colors ${
-                    pageNum === currentPage
+                    pageNum === validatedPage
                       ? "bg-cyan-600 text-white"
                       : "bg-zinc-900 text-cyan-400 hover:bg-zinc-800"
                   }`}
@@ -266,9 +266,9 @@ const BlogPage = async ({
             )}
           </div>
 
-          {currentPage < totalPages && (
+          {validatedPage < totalPages && (
             <Link
-              href={`/blog?page=${currentPage + 1}`}
+              href={`/blog?page=${validatedPage + 1}`}
               className="px-4 py-2 bg-zinc-900 text-cyan-400 rounded-lg hover:bg-zinc-800 transition-colors"
             >
               Next

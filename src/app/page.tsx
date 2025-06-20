@@ -1,6 +1,5 @@
 import { createMetadata } from "@/common/metadata";
 import ThreeDCarousel from "@/components/ui/slider/Slider";
-import HeroSection from "@/components/Hero/Hero";
 import FAQPage from "./faq/page";
 import LandingPage from "./home/page";
 import TestimonialServer from "./testimonials/page";
