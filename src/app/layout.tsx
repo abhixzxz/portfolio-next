@@ -9,7 +9,6 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/Header";
-import { createMetadata } from "@/common/metadata";
 
 const bangers = Bangers({
   weight: "400",
@@ -44,12 +43,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-export const metadata = createMetadata({
-  title: "Abhiraj K - Senior Software Developer in Kottayam, Kerala",
-  description:
-    "Top-rated software developer in Kottayam, Kerala. Specializing in React.js, Next.js, and full-stack development services.",
 });
 
 export default function RootLayout({
@@ -111,8 +104,6 @@ export default function RootLayout({
         className={`${bangers.variable} ${josefinSans.variable} ${londrinaSolid.variable} ${sacramento.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 min-h-screen`}
       >
         <Header />
-
-        {/* Main Content Container */}
         <main className="relative min-h-screen">
           <div className="pb-20 lg:pb-8">{children}</div>
         </main>
