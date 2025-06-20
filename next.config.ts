@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-
+// completed
 const nextConfig: NextConfig = {
   optimizeFonts: true,
   images: {

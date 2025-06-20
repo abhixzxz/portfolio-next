@@ -50,12 +50,17 @@ const HeroSection = () => {
   }, [sliderImages.length]);
 
   return (
-    <div className="w-full  flex flex-col md:flex-row items-center p-9">
+    <div
+      style={{
+        zIndex: 1000,
+      }}
+      className="w-full  flex flex-col md:flex-row items-center  "
+    >
       <div className="w-full mb-6 md:mb-0">
         <div className="relative">
           <Image src={CropperLaptopBglessImage} alt="Abhiraj.k Photo" />
           <div
-            className="absolute w-[45.4%] h-[44.9%] top-[18.8%] left-[17.8%] overflow-hidden rounded-[20px]"
+            className="absolute w-[45.4%] h-[44.9%] top-[17.8%] left-[17.7%] overflow-hidden rounded-[20px]"
             style={{
               clipPath: "polygon(3% 4%, 87% 8%, 100% 91%, 13% 98%)",
             }}
