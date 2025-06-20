@@ -13,6 +13,7 @@ import {
   Zap,
   Rocket,
 } from "lucide-react";
+import HeroSection from "@/components/Hero/Hero";
 
 export const metadata: Metadata = {
   title: "About Abhiraj K - Full Stack Developer",
@@ -503,6 +504,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <HeroSection />
 
         {/* Stats Section */}
         <section className="py-16 px-4">
