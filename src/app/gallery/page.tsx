@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { createMetadata } from "@/common/metadata";
-import { Camera } from "lucide-react";
 
 export const metadata: Metadata = createMetadata({
   title: "Gallery | Abhiraj K - Visual Portfolio",

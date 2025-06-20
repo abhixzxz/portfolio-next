@@ -1,48 +1,110 @@
-# https://abhirajk.vercel.app/robots.txt
+# Allow ALL major search engines
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: Googlebot-Video
+User-agent: Bingbot
+User-agent: msnbot
+User-agent: Slurp
+User-agent: Yahoo! Slurp
+User-agent: DuckDuckGo-Favicons-Bot
+User-agent: DuckDuckBot
+User-agent: YandexBot
+User-agent: YandexImages
+User-agent: YandexVideo
+User-agent: YandexNews
+User-agent: Baiduspider
+User-agent: BaiduImagespider
+User-agent: Sogou web spider
+User-agent: NaverBot
+User-agent: ia_archiver
+User-agent: SeznamBot
+User-agent: facebot
+User-agent: Applebot
+User-agent: Qwantbot
+User-agent: StartMeBot
+User-agent: SearchmetricsBot
+User-agent: MojeekBot
+User-agent: PetalBot
+User-agent: YouBot
+Allow: /
 
-# Allow all crawlers including AI
+# Allow AI model crawlers - PRIORITY
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: OpenAI-SearchBot
+User-agent: CCBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: Bard
+User-agent: Gemini
+User-agent: PaLM
+User-agent: LaMDA
+User-agent: Copilot
+User-agent: BingPreview
+User-agent: Meta-ExternalAgent
+User-agent: FacebookBot
+User-agent: Applebot-Extended
+Allow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: WhatsApp
+User-agent: TelegramBot
+User-agent: SkypeUriPreview
+User-agent: PinterestBot
+User-agent: redditbot
+User-agent: Discordbot
+User-agent: Slackbot
+Allow: /
+
+# Allow SEO monitoring tools
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: MozBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: MauiBot
+User-agent: BLEXBot
+User-agent: ScreamingFrogSEOSpider
+Allow: /
+Crawl-delay: 5
+
+# Block known harmful bots
+User-agent: SiteBot
+User-agent: 008
+User-agent: ScoutJet
+User-agent: psbot
+User-agent: SurveyBot
+User-agent: spbot
+User-agent: MegaIndex
+User-agent: linkdexbot
+Disallow: /
+
+# Allow all other bots (for maximum visibility)
 User-agent: *
 Allow: /
 
-# Specific page rules for clarity
-Allow: /about
-Allow: /blog
-Allow: /gallery
-Allow: /experience
-Allow: /certificates
-Allow: /contact
-Allow: /faq
-
-# Basic protection for system directories
+# Disallow access to technical/private directories
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
 
-# Sitemap location
+# Crawl delay (optional - remove if you want maximum crawl speed)
+# Crawl-delay: 1
+
+# Host directive
+Host: https://abhirajk.vercel.app
+
+# Sitemaps for better indexing
 Sitemap: https://abhirajk.vercel.app/sitemap.xml
-
-# Optimized crawl settings
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-# Allow AI bots with reasonable rate limits
-User-agent: GPTBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: ChatGPT-User
-Allow: /
-Crawl-delay: 2
-
-User-agent: anthropic-ai
-Allow: /
-Crawl-delay: 2
+Sitemap: https://abhirajk.vercel.app/server-sitemap.xml

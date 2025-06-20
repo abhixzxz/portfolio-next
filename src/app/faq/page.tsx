@@ -86,7 +86,7 @@ const faqs = [
   {
     question: "How can I get started with a project?",
     answer:
-      "You can get started by reaching out through my contact form or email. We'll schedule an initial consultation to discuss your requirements, timeline, and budget. I'll then provide a detailed proposal outlining the development approach and next steps.",
+      "You can get started by reaching out through my contact form or email. We&apos;ll schedule an initial consultation to discuss your requirements, timeline, and budget. I&apos;ll then provide a detailed proposal outlining the development approach and next steps.",
   },
 ] as const;
 
@@ -170,8 +170,8 @@ export default function FAQPage() {
               </h2>
 
               <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-                Feel free to reach out if you couldn't find the answer you were
-                looking for.
+                Feel free to reach out if you couldn&apos;t find the answer you
+                were looking for.
               </p>
 
               <a
@@ -182,7 +182,7 @@ export default function FAQPage() {
                   letterSpacing: "0.07em",
                 }}
               >
-                Let's Talk
+                Let&apos;s Talk
               </a>
             </div>
           </div>
