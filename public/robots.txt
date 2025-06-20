@@ -99,12 +99,8 @@ Disallow: /.env
 Disallow: /package.json
 Disallow: /package-lock.json
 
-# Crawl delay (optional - remove if you want maximum crawl speed)
-# Crawl-delay: 1
-
 # Host directive
 Host: https://abhirajk.vercel.app
 
-# Sitemaps for better indexing
+# Sitemap
 Sitemap: https://abhirajk.vercel.app/sitemap.xml
-Sitemap: https://abhirajk.vercel.app/server-sitemap.xml
