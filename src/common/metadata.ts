@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 export const defaultMetadata: Metadata = {
   title: "Abhiraj K - Software Developer",
@@ -240,7 +240,6 @@ export const defaultMetadata: Metadata = {
       "Full Stack Developer specializing in React, Next.js, and modern web technologies",
     images: ["https://abhirajk.vercel.app/og-image.jpg"],
   },
-  viewport: "width=device-width, initial-scale=1.0",
   alternates: {
     canonical: "https://abhirajk.vercel.app",
   },
@@ -278,3 +277,8 @@ export function createMetadata(options: Partial<Metadata> = {}): Metadata {
     },
   };
 }
+
+export const defaultViewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};

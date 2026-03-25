@@ -9,6 +9,12 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/Header";
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 const bangers = Bangers({
   weight: "400",

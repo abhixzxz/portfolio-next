@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 // completed
 const nextConfig: NextConfig = {
-  optimizeFonts: true,
   images: {
     remotePatterns: [
       {
@@ -23,7 +22,6 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-    domains: ["images.pexels.com", "res.cloudinary.com", "abhirajk.vercel.app"],
   },
 
   poweredByHeader: false,
